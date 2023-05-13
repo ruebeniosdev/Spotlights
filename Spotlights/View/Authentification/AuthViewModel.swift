@@ -42,7 +42,9 @@ class AuthViewModel: ObservableObject {
     @Published var showAlertReset = false
     @Published var errString: String?
     @Published var showSuccessAlert = false
-    var uiImage: UIImage?
+    
+
+  
     // MARK: UserDefaults
     @AppStorage("log_status")  var logStatus = false
     @AppStorage("user_profile_url") var profileURL: String?
@@ -184,7 +186,7 @@ class AuthViewModel: ObservableObject {
             }
         }
     }
-    
+    // Updating reauthenticate user
     func reauthenticateWithPassword(password: String, completion: @escaping (Result<Bool,Error>) -> Void) {
         if let user = Auth.auth().currentUser {
             let crediential = EmailAuthProvider.credential(withEmail: user.email ?? "", password: password)
@@ -197,6 +199,7 @@ class AuthViewModel: ObservableObject {
             }
         }
     }
+    // Updating User profile picture
     func updateUserProfilePicture() {
         guard let userUID = Auth.auth().currentUser?.uid,
               let imageData = userProfilePicData,
@@ -206,7 +209,7 @@ class AuthViewModel: ObservableObject {
         }
         
         let storageRef = Storage.storage().reference().child("Profile_Images").child(userUID)
-        
+
         storageRef.putData(compressedImageData, metadata: nil) { (_, error) in
             if let error = error {
                 print("Error uploading profile image: \(error)")
@@ -236,7 +239,7 @@ class AuthViewModel: ObservableObject {
             }
         }
     }
-    
+    // Updating Username
     func updateUsername(newUsername: String) {
         guard let userUID = Auth.auth().currentUser?.uid else {
             return
@@ -257,37 +260,40 @@ class AuthViewModel: ObservableObject {
                 print("Username updated successfully")
                 // Update the username in the current user object
                 self.myProfile?.username = newUsername
-
-            }
-        }
-        func updateFullname(newFullname: String, completion: @escaping (Bool) -> Void) {
-            guard let userUID = Auth.auth().currentUser?.uid else {
-                completion(false)
-                return
-            }
-            
-            let db = Firestore.firestore()
-            let userRef = db.collection("Users").document(userUID)
-            
-            userRef.updateData(["userFullname": newFullname]) { error in
-                if let error = error {
-                    print("Error updating fullname: \(error)")
-                    DispatchQueue.main.async {
-                        self.showAlert = true
-                        self.showSuccessAlert = false
-                        self.alertMessage = "Failed to update fullname."
-                    }
-                    completion(false)
-                } else {
-                    print("Fullname updated successfully")
-                    // Update the fullname in the current user object
-                    self.myProfile?.userFullname = newFullname
-
-                    completion(true)
-                }
+                // Clear the username text field
+                self.username = ""
             }
         }
     }
-    
+    // Updating fullname
+    func updateFullname(newFullname: String, completion: @escaping (Bool) -> Void) {
+        guard let userUID = Auth.auth().currentUser?.uid else {
+            completion(false)
+            return
+        }
+        
+        let db = Firestore.firestore()
+        let userRef = db.collection("Users").document(userUID)
+        
+        userRef.updateData(["userFullname": newFullname]) { error in
+            if let error = error {
+                print("Error updating fullname: \(error)")
+                DispatchQueue.main.async {
+                    self.showAlert = true
+                    self.showSuccessAlert = false
+                    self.alertMessage = "Failed to update fullname."
+                }
+                completion(false)
+            } else {
+                print("Fullname updated successfully")
+                // Update the fullname in the current user object
+                self.myProfile?.userFullname = newFullname
+                // Clear the username text field
+                self.fullname = ""
+              
+                completion(true)
+            }
+        }
+    }
     
 }

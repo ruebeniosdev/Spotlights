@@ -110,6 +110,9 @@ struct SignIn: View {
                     dismiss()
                 })
             }
+            .onTapGesture {
+                viewModel.closeKeyboard() // Dismiss the keyboard
+            }
     }
     
 }

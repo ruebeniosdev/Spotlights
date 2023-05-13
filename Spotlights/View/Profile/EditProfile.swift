@@ -98,18 +98,14 @@ struct EditProfile: View {
                                     }
                                     // dismisses view
                                     viewModel.showSuccessAlert = true
-                                    //dismiss()
-                                    // Clear the username text field
-                                    viewModel.username = ""
-                                    viewModel.fullname = ""
+                                    dismiss()
                                 } else {
                                     // Handle update failure
                                     viewModel.showAlert = true
                                     viewModel.showSuccessAlert = false
                                 }
-                                
+
                             }
-                            //dismiss()
                         }) {
                             Text("Done")
                                 .font(.subheadline)
@@ -124,22 +120,6 @@ struct EditProfile: View {
                             Text("Cancel")
                         }
                     }
-                }
-                // Show success alert
-                .alert(isPresented: $viewModel.showSuccessAlert) {
-                    Alert(
-                        title: Text("Success"),
-                        message: Text("Profile updated successfully."),
-                        dismissButton: .default(Text("OK"))
-                    )
-                }
-                // Show error alert
-                .alert(isPresented: $viewModel.showAlert) {
-                    Alert(
-                        title: Text("Error"),
-                        message: Text(viewModel.alertMessage),
-                        dismissButton: .default(Text("OK"))
-                    )
                 }
                 .alert(viewModel.errorMessage, isPresented: $viewModel.showError, actions: {})
                 .overlay {
@@ -157,6 +137,7 @@ struct EditProfile: View {
                         Task {
                             do {
                                 guard let imageData = try await newValue.loadTransferable(type: Data.self)  else { return }
+                              
                                 await MainActor.run(body: {
                                     viewModel.userProfilePicData = imageData
                                 })

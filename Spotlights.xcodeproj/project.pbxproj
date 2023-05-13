@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		590CCD0C2A102A21007260A6 /* HelperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590CCD0B2A102A21007260A6 /* HelperView.swift */; };
 		590FBA832A0D9F8400D3CBB4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590FBA822A0D9F8400D3CBB4 /* ImagePicker.swift */; };
 		592A916629EE0208005C99B6 /* FocusableField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A916529EE0207005C99B6 /* FocusableField.swift */; };
 		592B26242A0BC77F009E8EA0 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B26232A0BC77F009E8EA0 /* EditProfile.swift */; };
@@ -109,6 +110,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		590CCD0B2A102A21007260A6 /* HelperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperView.swift; sourceTree = "<group>"; };
 		590FBA822A0D9F8400D3CBB4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		592A916529EE0207005C99B6 /* FocusableField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableField.swift; sourceTree = "<group>"; };
 		592B26232A0BC77F009E8EA0 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 				59498A3F29E6CC9500E9DFED /* ImagePickerViewModel.swift */,
 				59498A4129E6CD6200E9DFED /* CustomImage.swift */,
 				59F6D36129FDA1C30040A8CA /* SignUpView.swift */,
+				590CCD0B2A102A21007260A6 /* HelperView.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -745,6 +748,7 @@
 				59498A3029E5FDBF00E9DFED /* SlideMenuView.swift in Sources */,
 				59498A3829E6054D00E9DFED /* Profile.swift in Sources */,
 				5942273129EA7480001E5EB4 /* LoadingView.swift in Sources */,
+				590CCD0C2A102A21007260A6 /* HelperView.swift in Sources */,
 				59498A3229E602CE00E9DFED /* Dashboard.swift in Sources */,
 				593BB19929EC962B00A0EF14 /* LogoutButton.swift in Sources */,
 				595D347429E8D6C80081C322 /* String+Extensions.swift in Sources */,
