@@ -21,10 +21,6 @@ struct SignUpView: View {
                 }
             }
         }
-//        .onAppear {
-//            focus = .fullname // Set the focus state to the username field
-//        }
-        
         .ignoresSafeArea(.keyboard, edges: .bottom)
         .photosPicker(isPresented: $viewModel.isPresentingImagePicker, selection: $viewModel.photoItem)
         .onChange(of: viewModel.photoItem, perform: { newValue in

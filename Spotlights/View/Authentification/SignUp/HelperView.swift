@@ -111,8 +111,9 @@ struct HelperView: View {
                         viewModel.createNewAccount()
                     }, title: "Create an account")
                     .padding(.horizontal)
-                    .disableWithOpacity(viewModel.email.isEmpty || viewModel.email.contains("@") || viewModel.password.count > 5 || viewModel.password.isEmpty || viewModel.fullname.isEmpty || viewModel.username.isEmpty || viewModel.userProfilePicData == nil)
-                    .opacity(viewModel.email.isEmpty || viewModel.email.contains("@") || viewModel.password.count > 5 || viewModel.password.isEmpty || viewModel.fullname.isEmpty || viewModel.username.isEmpty || viewModel.userProfilePicData == nil ? 0.5 : 0)
+                    .disabled(viewModel.email.isEmpty || viewModel.email.isEmpty || viewModel.password.isEmpty || viewModel.fullname.isEmpty || viewModel.username.isEmpty || viewModel.userProfilePicData == nil)
+
+                   
                     HStack(spacing: 0) {
                         Text("Have an account?")
                         Button {

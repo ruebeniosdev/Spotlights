@@ -13,7 +13,7 @@ struct User: Identifiable, Codable {
     var username: String
     var userFullname: String
     var userEmail: String
-    var userProfileURL: String
+    var userProfileURL: String?
     
     enum CodingKeys: CodingKey {
         case id

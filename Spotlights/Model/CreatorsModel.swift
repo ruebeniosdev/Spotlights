@@ -12,12 +12,12 @@ import FirebaseFirestoreSwift
 struct CreatorModel: Identifiable, Codable {
     @DocumentID var id: String?
     var blogURL: String
-    var selectedOption: String
+    var option: String
     var imageURL: URL?
     enum CodingKeys: CodingKey {
         case id
         case blogURL
-        case selectedOption
+        case option
         case imageURL
     }
 }

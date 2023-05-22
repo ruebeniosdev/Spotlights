@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct DropDownMenu: View {
-    let options: [String]
-    @Binding var selectedOption: String
-    @State private var showOptions = false
+    @ObservedObject var viewModel: SpotlightViewModel
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 0) {
@@ -21,30 +19,30 @@ struct DropDownMenu: View {
             }
             VStack(alignment: .leading) {
                 HStack {
-                    Text(selectedOption)
+                    Text(viewModel.projects)
                         .font(.custom("Inter-Medium", size: 16))
                         .foregroundColor(Color("textfieldcolor"))
                         .padding()
                         .frame(height: 56)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .overlay(alignment: .trailing) {
-                            Image(systemName: showOptions ? "chevron.up" : "chevron.down")
+                            Image(systemName: viewModel.showOptions ? "chevron.up" : "chevron.down")
                                 .resizable()
                                 .frame(width: 12, height: 6, alignment: .center)
                                 .foregroundColor(Color("secondary"))
-                                .rotationEffect(.degrees(showOptions ? 360 : 0))
-                                .rotation3DEffect(.degrees(showOptions ? 180 : 0), axis: (x: 0, y: 0, z: 1))
-                                .animation(.easeInOut, value: showOptions)
+                                .rotationEffect(.degrees(viewModel.showOptions ? 360 : 0))
+                                .rotation3DEffect(.degrees(viewModel.showOptions ? 180 : 0), axis: (x: 0, y: 0, z: 1))
+                                .animation(.easeInOut, value: viewModel.showOptions)
                                 .padding()
                         }
                 }
-                if showOptions {
+                if viewModel.showOptions {
                     VStack(alignment: .leading, spacing: 16) {
-                        ForEach(options, id: \.self) { option in
+                        ForEach(viewModel.options, id: \.self) { option in
                             Button {
                                 withAnimation(.easeInOut) {
-                                    self.selectedOption = option
-                                    self.showOptions = false
+                                    self.viewModel.projects = option
+                                    self.viewModel.showOptions = false
                                 }
                             } label: {
                                 Text(option)
@@ -63,7 +61,7 @@ struct DropDownMenu: View {
             .cornerRadius(5)
             .onTapGesture {
                 withAnimation(.easeInOut) {
-                    self.showOptions.toggle()
+                    self.viewModel.showOptions.toggle()
                 }
             }
         }
@@ -72,7 +70,7 @@ struct DropDownMenu: View {
 
 struct DropDownMenu_Previews: PreviewProvider {
     static var previews: some View {
-        DropDownMenu(options: [], selectedOption: .constant("Select which projects to support"))
+        DropDownMenu(viewModel: SpotlightViewModel())
             .previewLayout(.sizeThatFits)
             .padding()
     }

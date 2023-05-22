@@ -183,6 +183,10 @@ struct Spotlight: View {
                         }
                     }
                     .frame(maxWidth: .infinity,maxHeight: .infinity,alignment: .top)
+                   
+            }
+            .onTapGesture {
+                vm.closeKeyboard() // Dismiss the keyboard
             }
             .navigationBarBackButtonHidden(true)
         }

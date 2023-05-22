@@ -20,7 +20,7 @@ struct Loading: View {
             ForEach(0..<5) { circleBtn in
                 VStack {
                     Circle()
-                        .fill(Color("accent"))
+                        .fill(Color("accent").opacity(0.15))
                         .frame(width: 20, height: 20)
                        // .background(.red)
                     Spacer()

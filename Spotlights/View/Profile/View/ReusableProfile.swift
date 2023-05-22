@@ -10,9 +10,10 @@ import SDWebImageSwiftUI
 
 struct ReusableProfile: View {
     var user: User
+    @ObservedObject var viewModel: AuthViewModel
     var body: some View {
         HStack {
-            if let profileURL = URL(string: user.userProfileURL) {
+            if let profileURL = URL(string: user.userProfileURL ?? "") {
                 WebImage(url: profileURL)
                     .resizable()
                     .placeholder {
@@ -43,14 +44,21 @@ struct ReusableProfile: View {
                 }
             }
             
+            
             VStack(alignment: .leading, spacing: 4) {
-                Text(user.userFullname)
-                    .font(.custom("Poppins-Medium", size: 16))
-                    .foregroundColor(.white)
+                if let fullname = viewModel.myProfile?.userFullname {
+                    Text(fullname)
+                        .font(.custom("Poppins-Medium", size: 16))
+                        .foregroundColor(.white)
+                }
                 
-                Text(user.username)
-                    .font(.custom("Poppins-Medium", size: 12))
-                    .foregroundColor(.secondary)
+                
+                if let username = viewModel.myProfile?.username {
+                    Text(username)
+                        .font(.custom("Poppins-Medium", size: 12))
+                        .foregroundColor(.secondary)
+                }
+                
             }
         }
         

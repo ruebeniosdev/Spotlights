@@ -51,7 +51,7 @@ struct Profile: View {
                                 } label: {
                                     HStack(spacing: 16) {
                                         if let profile = viewModel.myProfile {
-                                            ReusableProfile(user: profile)
+                                            ReusableProfile(user: profile,viewModel: viewModel)
                                                 .refreshable {
                                                     self.viewModel.myProfile = nil
                                                     await viewModel.fetchUserData()

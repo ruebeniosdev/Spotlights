@@ -43,6 +43,7 @@ class AuthViewModel: ObservableObject {
     @Published var errString: String?
     @Published var showSuccessAlert = false
     
+    private var uiImage:  UIImage?
 
   
     // MARK: UserDefaults
@@ -50,6 +51,7 @@ class AuthViewModel: ObservableObject {
     @AppStorage("user_profile_url") var profileURL: String?
     @AppStorage("user_name")  var userNameStored = ""
     @AppStorage("user_UID")  var userID: String = ""
+    
     func fetchUserData() async {
         guard let userUID = Auth.auth().currentUser?.uid else { return }
         guard let user = try? await Firestore.firestore().collection("Users").document(userUID).getDocument(as: User.self) else { return }
@@ -199,6 +201,7 @@ class AuthViewModel: ObservableObject {
             }
         }
     }
+    
     // Updating User profile picture
     func updateUserProfilePicture() {
         guard let userUID = Auth.auth().currentUser?.uid,
@@ -255,6 +258,7 @@ class AuthViewModel: ObservableObject {
                     self.showAlert = true
                     self.showSuccessAlert = false
                     self.alertMessage = "Failed to update username."
+                    
                 }
             } else {
                 print("Username updated successfully")
@@ -262,6 +266,7 @@ class AuthViewModel: ObservableObject {
                 self.myProfile?.username = newUsername
                 // Clear the username text field
                 self.username = ""
+                
             }
         }
     }
@@ -282,6 +287,7 @@ class AuthViewModel: ObservableObject {
                     self.showAlert = true
                     self.showSuccessAlert = false
                     self.alertMessage = "Failed to update fullname."
+                    
                 }
                 completion(false)
             } else {
@@ -296,4 +302,21 @@ class AuthViewModel: ObservableObject {
         }
     }
     
+    func updateUserData() async throws {
+        guard let userUID = Auth.auth().currentUser?.uid else {
+            return
+        }
+        var data = [String: Any]()
+        // update fullname if changed
+        if !fullname.isEmpty && myProfile?.userFullname != fullname {
+            data["fullname"] = fullname
+        }
+        // update username if changed
+        if !username.isEmpty && myProfile?.username != username {
+            data["username"] = username
+        }
+        if !data.isEmpty {
+            try await Firestore.firestore().collection("Users").document(userUID).updateData(data)
+        }
+    }
 }
