@@ -14,7 +14,8 @@ struct EditProfile: View {
     @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel: AuthViewModel
     @FocusState private var focus: FocusableField?
-    @State private var scale: CGFloat = 0.1
+    @State private var scale: CGFloat = 0.5
+    @Namespace var animation
     var body: some View {
         NavigationStack {
             ZStack {
@@ -22,96 +23,8 @@ struct EditProfile: View {
                 VStack {
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack {
-                            Button {
-                                viewModel.isPresentingImagePicker.toggle()
-                            } label: {
-                                VStack {
-                                    if let profileURL = viewModel.myProfile?.userProfileURL,
-                                       let url = URL(string: profileURL) {
-                                        VStack {
-                                            ZStack {
-                                                WebImage(url: url)
-                                                    .resizable()
-                                                    .scaledToFill()
-                                                    .frame(width: 80, height: 80)
-                                                    .clipShape(Circle())
-                                                    .overlay {
-                                                        Circle()
-                                                            .stroke(LinearGradient(colors: [.red,.purple,.red,.orange,.yellow,.orange], startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 2.3)
-                                                    }
-                                                ZStack {
-                                                    Circle()
-                                                        .fill(Color.blue)
-                                                        .frame(width: 25, height: 25)
-                                                    
-                                                    Image(systemName: "plus")
-                                                        .font(Font.system(size: 16, weight: .bold))
-                                                        .foregroundColor(.white)
-                                                    
-                                                    Circle().stroke(Color.white, lineWidth: 2)
-                                                        .frame(width: 25, height: 25)
-                                                }
-                                                .offset(x: 35, y: 30)
-                                            }
-                                            .scaleEffect(scale)
-                                            .animation(.spring(), value: scale)
-                                            .onAppear {
-                                                scale = 1.0
-                                            }
-                                        }
-                                        
-                                    } else {
-                                        ZStack {
-                                            Image(systemName: "person.circle.fill")
-                                                .resizable()
-                                                .frame(width: 80, height: 80)
-                                                .clipShape(Circle())
-                                                .foregroundColor(Color(.systemGray4))
-                                                .overlay {
-                                                    Circle()
-                                                        .stroke(LinearGradient(colors: [.red,.purple,.red,.orange,.yellow,.orange], startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 2.3)
-                                                }
-                                            ZStack {
-                                                Circle()
-                                                    .fill(Color.blue)
-                                                    .frame(width: 25, height: 25)
-                                                
-                                                Image(systemName: "plus")
-                                                    .font(Font.system(size: 16, weight: .bold))
-                                                    .foregroundColor(.white)
-                                                
-                                                Circle().stroke(Color.white, lineWidth: 2)
-                                                    .frame(width: 25, height: 25)
-                                            }
-                                            .offset(x: 35, y: 30)
-                                        }
-                                    }
-                                    Text("Edit profile picture")
-                                        .font(.footnote)
-                                        .fontWeight(.semibold)
-                                        .foregroundColor(.white)
-                                    Divider()
-                                }
-                                .padding(.vertical, 8)
-                            }
-                            VStack {
-                                EditProfileRow(title: "Full Name", placeholder: "Fullname", text: $viewModel.fullname)
-                                    .onAppear {
-                                        if let userFullname = viewModel.myProfile?.userFullname {
-                                            viewModel.fullname = userFullname
-                                        }
-                                    }
-                                
-                                EditProfileRow(title: "Username", placeholder: "Username", text: $viewModel.username)
-                                    .onAppear {
-                                        if let username = viewModel.myProfile?.username {
-                                            viewModel.username = username
-                                        }
-                                    }
-                            }
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 2)
-                            
+                            ProfilePictureSection(viewModel: viewModel)
+                            UserDetailsSection(viewModel: viewModel)
                         }
                         .padding(.vertical, 30)
                     }
@@ -120,35 +33,10 @@ struct EditProfile: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("Done") {
-                            viewModel.updateUserProfilePicture()
-                            viewModel.updateUsername(newUsername: viewModel.username)
-                            viewModel.updateFullname(newFullname: viewModel.fullname) { success in
-                                if success {
-                                    // Fetch updated profile
-                                    Task {
-                                        await viewModel.fetchUserData()
-                                        
-                                    }
-                                    // dismisses view
-                                    viewModel.showSuccessAlert = true
-                                    dismiss()
-                                } else {
-                                    // Handle update failure
-                                    viewModel.showAlert = true
-                                    viewModel.showSuccessAlert = false
-                                }
-                            }
-                        }
-                        .font(.subheadline)
-                        .fontWeight(.bold)
-//                        .disabled(viewModel.fullname.isEmpty || viewModel.username.isEmpty)
+                        DoneButton(viewModel: viewModel, dismiss: dismiss)
                     }
                     ToolbarItem(placement: .navigationBarLeading) {
-                        Button("Cancel") {
-                            dismiss()
-                        }
-                        .foregroundColor(.primary)
+                        CancelButton(dismiss: dismiss)
                     }
                 }
                 .alert(viewModel.errorMessage, isPresented: $viewModel.showError, actions: {})
@@ -175,7 +63,7 @@ struct EditProfile: View {
                                     viewModel.userProfilePicData = imageData
                                     // Update the profile image placeholder with the selected image
                                     if let newImage = UIImage(data: imageData) {
-                                        viewModel.myProfile?.userProfileURL = saveImageToDocumentDirectory(image: newImage)
+                                        viewModel.myProfile?.userProfileURL = newImage.saveImageToDocumentDirectory()
                                     }
                                 })
                             } catch {
@@ -185,24 +73,10 @@ struct EditProfile: View {
                     }
                 })
             }
+            
         }
     }
-    func saveImageToDocumentDirectory(image: UIImage) -> String? {
-        guard let data = image.jpegData(compressionQuality: 0.8),
-              let directory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            return nil
-        }
-        let fileName = UUID().uuidString + ".jpg"
-        let fileURL = directory.appendingPathComponent(fileName)
-        
-        do {
-            try data.write(to: fileURL)
-            return fileURL.absoluteString
-        } catch {
-            // handle error
-            return nil
-        }
-    }
+
     
 }
 
@@ -211,3 +85,5 @@ struct EditProfile_Previews: PreviewProvider {
         EditProfile(viewModel: AuthViewModel())
     }
 }
+
+

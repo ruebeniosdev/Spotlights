@@ -30,21 +30,62 @@ enum ProfileImageSize {
 }
 
 struct CircularProfileImageView: View {
-    let user: User
+    @ObservedObject var viewModel: AuthViewModel
     let size: ProfileImageSize
     var body: some View {
-        if let imageURl = user.userProfileURL {
-            WebImage(url: URL(string: imageURl))
-                .resizable()
-                .scaledToFill()
-                .frame(width: size.dimension, height: size.dimension)
-                .clipShape(Circle())
+        if let profileURL = viewModel.myProfile?.userProfileURL,
+           let url = URL(string: profileURL) {
+            ZStack {
+                WebImage(url: url)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: size.dimension, height: size.dimension)
+                    .clipShape(Circle())
+                    .overlay {
+                        Circle()
+                            .stroke(LinearGradient(colors: [.red,.purple,.red,.orange,.yellow,.orange], startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 2.3)
+                    }
+                
+                ZStack {
+                    Circle()
+                        .fill(Color.blue)
+                        .frame(width: 25, height: 25)
+                    
+                    Image(systemName: "plus")
+                        .font(Font.system(size: 16, weight: .bold))
+                        .foregroundColor(.white)
+                    
+                    Circle().stroke(Color.white, lineWidth: 2)
+                        .frame(width: 25, height: 25)
+                }
+                .offset(x: 35, y: 30)
+            }
+            
         } else {
-            Image(systemName: "person.circle.fill")
-                .resizable()
-                .frame(width: size.dimension, height: size.dimension)
-                .clipShape(Circle())
-                .foregroundColor(Color(.systemGray4))
+            ZStack {
+                Image(systemName: "person.circle.fill")
+                    .resizable()
+                    .frame(width: 80, height: 80)
+                    .clipShape(Circle())
+                    .foregroundColor(Color(.systemGray4))
+                    .overlay {
+                        Circle()
+                            .stroke(LinearGradient(colors: [.red,.purple,.red,.orange,.yellow,.orange], startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 2.3)
+                    }
+                ZStack {
+                    Circle()
+                        .fill(Color.blue)
+                        .frame(width: 25, height: 25)
+                    
+                    Image(systemName: "plus")
+                        .font(Font.system(size: 16, weight: .bold))
+                        .foregroundColor(.white)
+                    
+                    Circle().stroke(Color.white, lineWidth: 2)
+                        .frame(width: 25, height: 25)
+                }
+                .offset(x: 35, y: 30)
+            }
         }
             
     }
@@ -52,6 +93,6 @@ struct CircularProfileImageView: View {
 
 struct CircularProfileImageView_Previews: PreviewProvider {
     static var previews: some View {
-        CircularProfileImageView(user: User(username: "", userFullname: "", userEmail: "", userProfileURL: ""), size: .large)
+        CircularProfileImageView(viewModel: AuthViewModel(), size: .large)
     }
 }

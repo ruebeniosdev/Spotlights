@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		590CCD0C2A102A21007260A6 /* HelperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590CCD0B2A102A21007260A6 /* HelperView.swift */; };
+		591790072A1DB784009F7900 /* ProfilePictureSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591790062A1DB784009F7900 /* ProfilePictureSection.swift */; };
+		5917900A2A1DB7EB009F7900 /* UserDetailsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591790092A1DB7EB009F7900 /* UserDetailsSection.swift */; };
+		5917900D2A1DB8BD009F7900 /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5917900C2A1DB8BD009F7900 /* DoneButton.swift */; };
+		5917900F2A1DBB8C009F7900 /* saveToDocumentDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5917900E2A1DBB8C009F7900 /* saveToDocumentDirectory.swift */; };
+		591790122A1DBEC8009F7900 /* CancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591790112A1DBEC8009F7900 /* CancelButton.swift */; };
+		591790192A1DC1A7009F7900 /* UserAccountSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591790182A1DC1A7009F7900 /* UserAccountSection.swift */; };
+		5917901C2A1DC1DF009F7900 /* ChangePasswordSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5917901B2A1DC1DF009F7900 /* ChangePasswordSection.swift */; };
+		591790202A1DC22A009F7900 /* LogoutSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5917901F2A1DC22A009F7900 /* LogoutSection.swift */; };
+		591790232A1DC248009F7900 /* DeleteAccountSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591790222A1DC248009F7900 /* DeleteAccountSection.swift */; };
+		591790272A1DC515009F7900 /* ButtonsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591790262A1DC515009F7900 /* ButtonsSection.swift */; };
+		5917902A2A1DC696009F7900 /* SelectedButtonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591790292A1DC696009F7900 /* SelectedButtonContent.swift */; };
+		5917902D2A1DC6DF009F7900 /* SpotlightContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5917902C2A1DC6DF009F7900 /* SpotlightContent.swift */; };
 		592A916629EE0208005C99B6 /* FocusableField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A916529EE0207005C99B6 /* FocusableField.swift */; };
 		592B26242A0BC77F009E8EA0 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B26232A0BC77F009E8EA0 /* EditProfile.swift */; };
 		592B26262A0BEB99009E8EA0 /* ReusableEditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B26252A0BEB99009E8EA0 /* ReusableEditProfile.swift */; };
@@ -110,6 +122,18 @@
 
 /* Begin PBXFileReference section */
 		590CCD0B2A102A21007260A6 /* HelperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperView.swift; sourceTree = "<group>"; };
+		591790062A1DB784009F7900 /* ProfilePictureSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureSection.swift; sourceTree = "<group>"; };
+		591790092A1DB7EB009F7900 /* UserDetailsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsSection.swift; sourceTree = "<group>"; };
+		5917900C2A1DB8BD009F7900 /* DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
+		5917900E2A1DBB8C009F7900 /* saveToDocumentDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saveToDocumentDirectory.swift; sourceTree = "<group>"; };
+		591790112A1DBEC8009F7900 /* CancelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelButton.swift; sourceTree = "<group>"; };
+		591790182A1DC1A7009F7900 /* UserAccountSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountSection.swift; sourceTree = "<group>"; };
+		5917901B2A1DC1DF009F7900 /* ChangePasswordSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordSection.swift; sourceTree = "<group>"; };
+		5917901F2A1DC22A009F7900 /* LogoutSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutSection.swift; sourceTree = "<group>"; };
+		591790222A1DC248009F7900 /* DeleteAccountSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountSection.swift; sourceTree = "<group>"; };
+		591790262A1DC515009F7900 /* ButtonsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsSection.swift; sourceTree = "<group>"; };
+		591790292A1DC696009F7900 /* SelectedButtonContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedButtonContent.swift; sourceTree = "<group>"; };
+		5917902C2A1DC6DF009F7900 /* SpotlightContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightContent.swift; sourceTree = "<group>"; };
 		592A916529EE0207005C99B6 /* FocusableField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableField.swift; sourceTree = "<group>"; };
 		592B26232A0BC77F009E8EA0 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
 		592B26252A0BEB99009E8EA0 /* ReusableEditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableEditProfile.swift; sourceTree = "<group>"; };
@@ -223,6 +247,126 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		591790052A1DB775009F7900 /* ProfilePictureSection */ = {
+			isa = PBXGroup;
+			children = (
+				591790062A1DB784009F7900 /* ProfilePictureSection.swift */,
+			);
+			path = ProfilePictureSection;
+			sourceTree = "<group>";
+		};
+		591790082A1DB7E4009F7900 /* UserDetailsSection */ = {
+			isa = PBXGroup;
+			children = (
+				591790092A1DB7EB009F7900 /* UserDetailsSection.swift */,
+			);
+			path = UserDetailsSection;
+			sourceTree = "<group>";
+		};
+		5917900B2A1DB8B8009F7900 /* DoneButton */ = {
+			isa = PBXGroup;
+			children = (
+				5917900C2A1DB8BD009F7900 /* DoneButton.swift */,
+			);
+			path = DoneButton;
+			sourceTree = "<group>";
+		};
+		591790102A1DBEBA009F7900 /* CancelButton */ = {
+			isa = PBXGroup;
+			children = (
+				591790112A1DBEC8009F7900 /* CancelButton.swift */,
+			);
+			path = CancelButton;
+			sourceTree = "<group>";
+		};
+		591790162A1DC171009F7900 /* Edit Prodife */ = {
+			isa = PBXGroup;
+			children = (
+				591790102A1DBEBA009F7900 /* CancelButton */,
+				5917900B2A1DB8B8009F7900 /* DoneButton */,
+				591790082A1DB7E4009F7900 /* UserDetailsSection */,
+				591790052A1DB775009F7900 /* ProfilePictureSection */,
+			);
+			path = "Edit Prodife";
+			sourceTree = "<group>";
+		};
+		591790172A1DC186009F7900 /* ProfileSubFolders */ = {
+			isa = PBXGroup;
+			children = (
+				591790212A1DC244009F7900 /* DeleteAccountSection */,
+				5917901E2A1DC225009F7900 /* LogoutSection */,
+				5917901D2A1DC1EA009F7900 /* UserAccountSection */,
+				5917901A2A1DC1DA009F7900 /* ChangePasswordSection */,
+			);
+			path = ProfileSubFolders;
+			sourceTree = "<group>";
+		};
+		5917901A2A1DC1DA009F7900 /* ChangePasswordSection */ = {
+			isa = PBXGroup;
+			children = (
+				5917901B2A1DC1DF009F7900 /* ChangePasswordSection.swift */,
+			);
+			path = ChangePasswordSection;
+			sourceTree = "<group>";
+		};
+		5917901D2A1DC1EA009F7900 /* UserAccountSection */ = {
+			isa = PBXGroup;
+			children = (
+				591790182A1DC1A7009F7900 /* UserAccountSection.swift */,
+			);
+			path = UserAccountSection;
+			sourceTree = "<group>";
+		};
+		5917901E2A1DC225009F7900 /* LogoutSection */ = {
+			isa = PBXGroup;
+			children = (
+				5917901F2A1DC22A009F7900 /* LogoutSection.swift */,
+			);
+			path = LogoutSection;
+			sourceTree = "<group>";
+		};
+		591790212A1DC244009F7900 /* DeleteAccountSection */ = {
+			isa = PBXGroup;
+			children = (
+				591790222A1DC248009F7900 /* DeleteAccountSection.swift */,
+			);
+			path = DeleteAccountSection;
+			sourceTree = "<group>";
+		};
+		591790242A1DC4FF009F7900 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5917902B2A1DC6DB009F7900 /* SpotlightContent */,
+				591790282A1DC691009F7900 /* SelectedButtonContent */,
+				591790252A1DC50B009F7900 /* ButtonsSection */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		591790252A1DC50B009F7900 /* ButtonsSection */ = {
+			isa = PBXGroup;
+			children = (
+				591790262A1DC515009F7900 /* ButtonsSection.swift */,
+			);
+			path = ButtonsSection;
+			sourceTree = "<group>";
+		};
+		591790282A1DC691009F7900 /* SelectedButtonContent */ = {
+			isa = PBXGroup;
+			children = (
+				591790292A1DC696009F7900 /* SelectedButtonContent.swift */,
+			);
+			path = SelectedButtonContent;
+			sourceTree = "<group>";
+		};
+		5917902B2A1DC6DB009F7900 /* SpotlightContent */ = {
+			isa = PBXGroup;
+			children = (
+				5917902C2A1DC6DF009F7900 /* SpotlightContent.swift */,
+			);
+			path = SpotlightContent;
+			sourceTree = "<group>";
+		};
 		593B7EAE2A1134100074D61A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,6 +574,7 @@
 		59498A1D29E5DD5C00E9DFED /* Spotlight */ = {
 			isa = PBXGroup;
 			children = (
+				591790242A1DC4FF009F7900 /* Views */,
 				595D346D29E8CEA90081C322 /* ViewModel */,
 				59498A1E29E5DD6B00E9DFED /* Spotlight.swift */,
 				59498A2429E5E4A900E9DFED /* Header.swift */,
@@ -552,6 +697,8 @@
 		597B997F2A1A48E9004AF13F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				591790172A1DC186009F7900 /* ProfileSubFolders */,
+				591790162A1DC171009F7900 /* Edit Prodife */,
 				59498A3729E6054D00E9DFED /* Profile.swift */,
 				592B26232A0BC77F009E8EA0 /* EditProfile.swift */,
 				597B99842A1A7A11004AF13F /* CircularProfileImageView.swift */,
@@ -575,6 +722,7 @@
 				5942273229EB0859001E5EB4 /* LoginError.swift */,
 				59EEF51429EBBDCE00074EF8 /* closeKeyboard.swift */,
 				592A916529EE0207005C99B6 /* FocusableField.swift */,
+				5917900E2A1DBB8C009F7900 /* saveToDocumentDirectory.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -711,8 +859,10 @@
 				596A21822A0FBA0C008A806C /* EditProfileRow.swift in Sources */,
 				59498A2129E5DE6100E9DFED /* CreatorCard.swift in Sources */,
 				59498A1C29E5D76700E9DFED /* CustomSecureField.swift in Sources */,
+				5917901C2A1DC1DF009F7900 /* ChangePasswordSection.swift in Sources */,
 				593BB19B29ECCCE700A0EF14 /* CustomDialog.swift in Sources */,
 				599ACA4429E7BBF400C80A62 /* MenuBtn.swift in Sources */,
+				591790072A1DB784009F7900 /* ProfilePictureSection.swift in Sources */,
 				596C9BA029E727E700BF8237 /* DonateButton.swift in Sources */,
 				599ACA4229E7A6A200C80A62 /* projectList.swift in Sources */,
 				595D347229E8D2630081C322 /* ExploreViewModel.swift in Sources */,
@@ -725,6 +875,7 @@
 				598D507929E853460089DEBF /* OnboardingItem.swift in Sources */,
 				59498A2829E5E55B00E9DFED /* ButtonMain.swift in Sources */,
 				59498A2529E5E4A900E9DFED /* Header.swift in Sources */,
+				5917900F2A1DBB8C009F7900 /* saveToDocumentDirectory.swift in Sources */,
 				593BB19529EC4DE800A0EF14 /* AboutView.swift in Sources */,
 				596C9B9C29E7217F00BF8237 /* OrphanageDetailView.swift in Sources */,
 				595D346C29E8B87E0081C322 /* CurrentPro.swift in Sources */,
@@ -732,13 +883,17 @@
 				594989D329E5C5E000E9DFED /* ContentView.swift in Sources */,
 				59498A1829E5CE3400E9DFED /* AuthViewModel.swift in Sources */,
 				594989D129E5C5E000E9DFED /* SpotlightsApp.swift in Sources */,
+				591790192A1DC1A7009F7900 /* UserAccountSection.swift in Sources */,
 				59498A1F29E5DD6B00E9DFED /* Spotlight.swift in Sources */,
 				59498A2329E5E0DF00E9DFED /* GifterCard.swift in Sources */,
 				59498A1429E5CD0600E9DFED /* SignIn.swift in Sources */,
 				5969504D29E98AED00340BDD /* SideMenuOptionRowView.swift in Sources */,
 				596C9BAE29E78A4600BF8237 /* dropDownMenu.swift in Sources */,
+				591790272A1DC515009F7900 /* ButtonsSection.swift in Sources */,
+				591790232A1DC248009F7900 /* DeleteAccountSection.swift in Sources */,
 				59A525C42A04C704004EF9EA /* AuthValidationModel.swift in Sources */,
 				597B99812A1A48FF004AF13F /* EditprofileViewModel.swift in Sources */,
+				5917902A2A1DC696009F7900 /* SelectedButtonContent.swift in Sources */,
 				593BB1A229ECF90300A0EF14 /* profileName.swift in Sources */,
 				596C9BA429E72D4400BF8237 /* SchoolDetail.swift in Sources */,
 				593BB19D29ECDEA500A0EF14 /* ReusableProfile.swift in Sources */,
@@ -750,10 +905,12 @@
 				59EEF51529EBBDCE00074EF8 /* closeKeyboard.swift in Sources */,
 				592A916629EE0208005C99B6 /* FocusableField.swift in Sources */,
 				59A2A71129F9C2C200934870 /* changePassword.swift in Sources */,
+				5917900A2A1DB7EB009F7900 /* UserDetailsSection.swift in Sources */,
 				596C9B9E29E7223700BF8237 /* DetailHeader.swift in Sources */,
 				59498A4429E6D4B400E9DFED /* ExploreCreator.swift in Sources */,
 				59DC8BDA29EBB0E20036FE88 /* Main.swift in Sources */,
 				59498A2C29E5FCD100E9DFED /* SideMenuOptions.swift in Sources */,
+				591790202A1DC22A009F7900 /* LogoutSection.swift in Sources */,
 				59498A4A29E6F38900E9DFED /* CreatorPeopleCard.swift in Sources */,
 				597B99852A1A7A11004AF13F /* CircularProfileImageView.swift in Sources */,
 				596A21802A0F6EC7008A806C /* ReAuthenticateView.swift in Sources */,
@@ -761,7 +918,9 @@
 				59DC8BD229EB89250036FE88 /* SystemThemeManager.swift in Sources */,
 				598D505A29E834630089DEBF /* RoundedCorner.swift in Sources */,
 				59498A1629E5CE0D00E9DFED /* CustomTextField.swift in Sources */,
+				5917902D2A1DC6DF009F7900 /* SpotlightContent.swift in Sources */,
 				5942273329EB0859001E5EB4 /* LoginError.swift in Sources */,
+				591790122A1DBEC8009F7900 /* CancelButton.swift in Sources */,
 				59A525BE2A01D9AF004EF9EA /* CreatorsModel.swift in Sources */,
 				59BBDFF629EBFE4100235DD7 /* Loading.swift in Sources */,
 				59498A3029E5FDBF00E9DFED /* SlideMenuView.swift in Sources */,
@@ -776,6 +935,7 @@
 				598D507729E83C950089DEBF /* HapticManager.swift in Sources */,
 				596C9BA929E7475B00BF8237 /* ForgotPassword.swift in Sources */,
 				595D346F29E8CEBA0081C322 /* SpotlightViewModel.swift in Sources */,
+				5917900D2A1DB8BD009F7900 /* DoneButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
