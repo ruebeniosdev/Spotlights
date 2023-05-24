@@ -20,6 +20,14 @@
 		591790272A1DC515009F7900 /* ButtonsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591790262A1DC515009F7900 /* ButtonsSection.swift */; };
 		5917902A2A1DC696009F7900 /* SelectedButtonContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591790292A1DC696009F7900 /* SelectedButtonContent.swift */; };
 		5917902D2A1DC6DF009F7900 /* SpotlightContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5917902C2A1DC6DF009F7900 /* SpotlightContent.swift */; };
+		591790312A1DC7FC009F7900 /* CategoryButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591790302A1DC7FC009F7900 /* CategoryButtons.swift */; };
+		591790342A1DC84A009F7900 /* ExploreContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591790332A1DC84A009F7900 /* ExploreContent.swift */; };
+		591790372A1DC8FF009F7900 /* GiftersOfTheWeekSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591790362A1DC8FF009F7900 /* GiftersOfTheWeekSection.swift */; };
+		5917903A2A1DC998009F7900 /* CreatorsOfTheWeekSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591790392A1DC998009F7900 /* CreatorsOfTheWeekSection.swift */; };
+		5917903D2A1DC9CB009F7900 /* ProjectsToSupportSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5917903C2A1DC9CA009F7900 /* ProjectsToSupportSection.swift */; };
+		591790412A1DCAE2009F7900 /* SlideMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591790402A1DCAE2009F7900 /* SlideMenuHeaderView.swift */; };
+		591790462A1DCB2E009F7900 /* SlideMenuOptionsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591790452A1DCB2E009F7900 /* SlideMenuOptionsRowView.swift */; };
+		591790492A1DCCA3009F7900 /* SlideMenuFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591790482A1DCCA3009F7900 /* SlideMenuFooterView.swift */; };
 		592A916629EE0208005C99B6 /* FocusableField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A916529EE0207005C99B6 /* FocusableField.swift */; };
 		592B26242A0BC77F009E8EA0 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B26232A0BC77F009E8EA0 /* EditProfile.swift */; };
 		592B26262A0BEB99009E8EA0 /* ReusableEditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592B26252A0BEB99009E8EA0 /* ReusableEditProfile.swift */; };
@@ -134,6 +142,14 @@
 		591790262A1DC515009F7900 /* ButtonsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsSection.swift; sourceTree = "<group>"; };
 		591790292A1DC696009F7900 /* SelectedButtonContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedButtonContent.swift; sourceTree = "<group>"; };
 		5917902C2A1DC6DF009F7900 /* SpotlightContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightContent.swift; sourceTree = "<group>"; };
+		591790302A1DC7FC009F7900 /* CategoryButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtons.swift; sourceTree = "<group>"; };
+		591790332A1DC84A009F7900 /* ExploreContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreContent.swift; sourceTree = "<group>"; };
+		591790362A1DC8FF009F7900 /* GiftersOfTheWeekSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftersOfTheWeekSection.swift; sourceTree = "<group>"; };
+		591790392A1DC998009F7900 /* CreatorsOfTheWeekSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorsOfTheWeekSection.swift; sourceTree = "<group>"; };
+		5917903C2A1DC9CA009F7900 /* ProjectsToSupportSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsToSupportSection.swift; sourceTree = "<group>"; };
+		591790402A1DCAE2009F7900 /* SlideMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuHeaderView.swift; sourceTree = "<group>"; };
+		591790452A1DCB2E009F7900 /* SlideMenuOptionsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuOptionsRowView.swift; sourceTree = "<group>"; };
+		591790482A1DCCA3009F7900 /* SlideMenuFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuFooterView.swift; sourceTree = "<group>"; };
 		592A916529EE0207005C99B6 /* FocusableField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableField.swift; sourceTree = "<group>"; };
 		592B26232A0BC77F009E8EA0 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
 		592B26252A0BEB99009E8EA0 /* ReusableEditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableEditProfile.swift; sourceTree = "<group>"; };
@@ -367,6 +383,91 @@
 			path = SpotlightContent;
 			sourceTree = "<group>";
 		};
+		5917902E2A1DC7F0009F7900 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				591790322A1DC846009F7900 /* ExploreContent */,
+				5917902F2A1DC7F5009F7900 /* CategoryButtons */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5917902F2A1DC7F5009F7900 /* CategoryButtons */ = {
+			isa = PBXGroup;
+			children = (
+				591790302A1DC7FC009F7900 /* CategoryButtons.swift */,
+			);
+			path = CategoryButtons;
+			sourceTree = "<group>";
+		};
+		591790322A1DC846009F7900 /* ExploreContent */ = {
+			isa = PBXGroup;
+			children = (
+				591790332A1DC84A009F7900 /* ExploreContent.swift */,
+			);
+			path = ExploreContent;
+			sourceTree = "<group>";
+		};
+		591790352A1DC8FA009F7900 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5917903B2A1DC9C6009F7900 /* ProjectsToSupportSection */,
+				591790382A1DC994009F7900 /* CreatorsOfTheWeekSection */,
+				591790362A1DC8FF009F7900 /* GiftersOfTheWeekSection.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		591790382A1DC994009F7900 /* CreatorsOfTheWeekSection */ = {
+			isa = PBXGroup;
+			children = (
+				591790392A1DC998009F7900 /* CreatorsOfTheWeekSection.swift */,
+			);
+			path = CreatorsOfTheWeekSection;
+			sourceTree = "<group>";
+		};
+		5917903B2A1DC9C6009F7900 /* ProjectsToSupportSection */ = {
+			isa = PBXGroup;
+			children = (
+				5917903C2A1DC9CA009F7900 /* ProjectsToSupportSection.swift */,
+			);
+			path = ProjectsToSupportSection;
+			sourceTree = "<group>";
+		};
+		5917903E2A1DCAD2009F7900 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				591790472A1DCC9B009F7900 /* SlideMenuFooterView */,
+				591790422A1DCB04009F7900 /* SlideMenuOptionRowView */,
+				5917903F2A1DCADD009F7900 /* SlideMenuHeaderView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5917903F2A1DCADD009F7900 /* SlideMenuHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				591790402A1DCAE2009F7900 /* SlideMenuHeaderView.swift */,
+			);
+			path = SlideMenuHeaderView;
+			sourceTree = "<group>";
+		};
+		591790422A1DCB04009F7900 /* SlideMenuOptionRowView */ = {
+			isa = PBXGroup;
+			children = (
+				591790452A1DCB2E009F7900 /* SlideMenuOptionsRowView.swift */,
+			);
+			path = SlideMenuOptionRowView;
+			sourceTree = "<group>";
+		};
+		591790472A1DCC9B009F7900 /* SlideMenuFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				591790482A1DCCA3009F7900 /* SlideMenuFooterView.swift */,
+			);
+			path = SlideMenuFooterView;
+			sourceTree = "<group>";
+		};
 		593B7EAE2A1134100074D61A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,6 +611,7 @@
 		594989E229E5C65F00E9DFED /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				591790352A1DC8FA009F7900 /* Views */,
 				59498A3129E602CE00E9DFED /* Dashboard.swift */,
 				59498A4B29E6FAD800E9DFED /* ProjectCard.swift */,
 				59498A4929E6F38900E9DFED /* CreatorPeopleCard.swift */,
@@ -529,6 +631,7 @@
 		59498A0D29E5CCA500E9DFED /* SlideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				5917903E2A1DCAD2009F7900 /* Views */,
 				593BB19329EC4DD900A0EF14 /* About */,
 				59498A2F29E5FDBF00E9DFED /* SlideMenuView.swift */,
 				599ACA4329E7BBF400C80A62 /* MenuBtn.swift */,
@@ -600,6 +703,7 @@
 		59498A3329E604EE00E9DFED /* Explore */ = {
 			isa = PBXGroup;
 			children = (
+				5917902E2A1DC7F0009F7900 /* Views */,
 				595D347029E8D2520081C322 /* ExploreViewModel */,
 				59498A3429E604FA00E9DFED /* Explore.swift */,
 				59498A4329E6D4B400E9DFED /* ExploreCreator.swift */,
@@ -863,6 +967,9 @@
 				593BB19B29ECCCE700A0EF14 /* CustomDialog.swift in Sources */,
 				599ACA4429E7BBF400C80A62 /* MenuBtn.swift in Sources */,
 				591790072A1DB784009F7900 /* ProfilePictureSection.swift in Sources */,
+				5917903A2A1DC998009F7900 /* CreatorsOfTheWeekSection.swift in Sources */,
+				591790492A1DCCA3009F7900 /* SlideMenuFooterView.swift in Sources */,
+				591790372A1DC8FF009F7900 /* GiftersOfTheWeekSection.swift in Sources */,
 				596C9BA029E727E700BF8237 /* DonateButton.swift in Sources */,
 				599ACA4229E7A6A200C80A62 /* projectList.swift in Sources */,
 				595D347229E8D2630081C322 /* ExploreViewModel.swift in Sources */,
@@ -883,6 +990,7 @@
 				594989D329E5C5E000E9DFED /* ContentView.swift in Sources */,
 				59498A1829E5CE3400E9DFED /* AuthViewModel.swift in Sources */,
 				594989D129E5C5E000E9DFED /* SpotlightsApp.swift in Sources */,
+				591790342A1DC84A009F7900 /* ExploreContent.swift in Sources */,
 				591790192A1DC1A7009F7900 /* UserAccountSection.swift in Sources */,
 				59498A1F29E5DD6B00E9DFED /* Spotlight.swift in Sources */,
 				59498A2329E5E0DF00E9DFED /* GifterCard.swift in Sources */,
@@ -897,8 +1005,10 @@
 				593BB1A229ECF90300A0EF14 /* profileName.swift in Sources */,
 				596C9BA429E72D4400BF8237 /* SchoolDetail.swift in Sources */,
 				593BB19D29ECDEA500A0EF14 /* ReusableProfile.swift in Sources */,
+				591790412A1DCAE2009F7900 /* SlideMenuHeaderView.swift in Sources */,
 				592B26242A0BC77F009E8EA0 /* EditProfile.swift in Sources */,
 				59498A3C29E6300C00E9DFED /* GiftersModel.swift in Sources */,
+				591790462A1DCB2E009F7900 /* SlideMenuOptionsRowView.swift in Sources */,
 				59DC8BD629EBA33F0036FE88 /* User.swift in Sources */,
 				59498A4829E6EFE100E9DFED /* giftersofWeek.swift in Sources */,
 				5969505229E992E800340BDD /* MultilineTextField.swift in Sources */,
@@ -910,6 +1020,7 @@
 				59498A4429E6D4B400E9DFED /* ExploreCreator.swift in Sources */,
 				59DC8BDA29EBB0E20036FE88 /* Main.swift in Sources */,
 				59498A2C29E5FCD100E9DFED /* SideMenuOptions.swift in Sources */,
+				5917903D2A1DC9CB009F7900 /* ProjectsToSupportSection.swift in Sources */,
 				591790202A1DC22A009F7900 /* LogoutSection.swift in Sources */,
 				59498A4A29E6F38900E9DFED /* CreatorPeopleCard.swift in Sources */,
 				597B99852A1A7A11004AF13F /* CircularProfileImageView.swift in Sources */,
@@ -934,6 +1045,7 @@
 				59498A3529E604FA00E9DFED /* Explore.swift in Sources */,
 				598D507729E83C950089DEBF /* HapticManager.swift in Sources */,
 				596C9BA929E7475B00BF8237 /* ForgotPassword.swift in Sources */,
+				591790312A1DC7FC009F7900 /* CategoryButtons.swift in Sources */,
 				595D346F29E8CEBA0081C322 /* SpotlightViewModel.swift in Sources */,
 				5917900D2A1DB8BD009F7900 /* DoneButton.swift in Sources */,
 			);
